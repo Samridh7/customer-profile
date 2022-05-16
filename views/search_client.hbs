@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filtered name</title>
+</head>
+<body>
+    <a href="/add">Add person</a>
+    <a href="/">All persons list</a>
+    <table border="1" cellspacing="10" cellpadding="10">
+        <tr>
+            {{!-- <th>id</th> --}}
+            <th>Client_Name</th>
+            <th>Passenger_Name</th>
+            <th>DOB</th>
+            <th>Mobile_Number</th>
+            <th>Seat</th>
+            <th>Meal</th>
+            <th>Passport_Number</th>
+            <th>Passport_Expiry_Date</th>
+            <th>FFN</th>
+            <th>delete</th>
+            <th>update</th>
+        </tr>
+        {{#each clients as |client|}}
+        <tr>
+            {{!-- <td>{{person.id}}</td> --}}
+            <td>{{client.Client_Name}}</td>
+            <td>{{client.Passenger_Name}}</td>
+            <td>{{client.DOB}}</td>
+            <td>{{client.Mobile_Number}}</td>
+            <td>{{client.Seat}}</td>
+            <td>{{client.Meal}}</td>
+            <td>{{client.Passport_Number}}</td>
+            <td>{{client.Passport_Expiry_Date}}</td>
+            {{!-- <td>{{client.FFN}}</td> --}}
+            <td><a href="/delete/{{client.id}}">delete</a></td>
+            <td><a href="/update/{{client.id}}">update</a></td>
+        </tr>
+        {{/each}}
+    </table>
+</body>
+</html>

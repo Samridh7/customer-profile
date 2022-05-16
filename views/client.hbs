@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Data</title>
+</head>
+<body>
+    {{!-- <div class="link" style="width: 10%; margin: auto;"> --}}
+    <a href="/add">Add client</a>
+    {{!-- <a href="/update">Update person</a> --}}
+    {{!-- </div> --}}
+    <table border="1" cellspacing="10" cellpadding="10">
+        <tr>
+            {{!-- <th>id</th> --}}
+            <th>Client_Name</th>
+            <th>Passenger_Name</th>
+            <th>DOB</th>
+            <th>Mobile_Number</th>
+            <th>Seat</th>
+            <th>Meal</th>
+            <th>Passport_Number</th>
+            <th>Passport_Expiry_Date</th>
+            {{!-- <th>FFN</th> --}}
+            <th>delete</th>
+            <th>update</th>
+            <th>addFFN</th>
+        </tr>
+        {{#each clients as |client|}}
+        <tr>
+            {{!-- <td>{{person.id}}</td> --}}
+            <td>{{client.Client_Name}}</td>
+            <td>{{client.Passenger_Name}}</td>
+            <td>{{dateFormat client.DOB "DD-MM-yyyy"}}</td>
+            <td>{{client.Mobile_Number}}</td>
+            <td>{{client.Seat}}</td>
+            <td>{{client.Meal}}</td>
+            <td>{{client.Passport_Number}}</td>
+            <td>{{dateFormat client.Passport_Expiry_Date "DD-MM-yyyy"}}</td>
+            {{!-- <td><select name="" id="">
+                <option value="">{{client.FFN}}</option>
+                </select></td> --}}
+            {{!-- <td>{{client.FFN}}</td> --}}
+            <td><a href="/delete/{{client.id}}">delete</a></td>
+            <td><a href="/update/{{client.id}}">update</a></td>
+            <td><a href="/addFFN/{{client.Passport_Number}}">addFFN</a></td>
+        </tr>
+        {{/each}}
+    </table>
+    <form action="/search" method="get">
+        <input name="search" type="text" style="margin: 10px; padding: 5px; width: 20%" placeholder="search name">
+        <button type="submit" style="padding: 5px; width: 5%;">Search</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update client Info</title>
+</head>
+<body>
+    <h1>Update client's Info</h1>
+    <form action="/update" method="post">
+        <input name="id" type="hidden" value="{{id}}" placeholder="Enter id" style="margin: 10px; padding: 5px; width: 20%;"><br>
+        <input name="Client_Name" type="text" placeholder="Client_Name" style="margin: 10px; padding: 5px; width: 20%"><br>
+        <input name="Passenger_Name" type="text" placeholder="Passenger_Name" style="margin: 10px; padding: 5px; width: 20%"><br>
+        <input name="DOB" type="text" placeholder="DOB" style="margin: 10px; padding: 5px; width: 20%"><br>
+        <input name="Mobile_Number" type="number" placeholder="Mobile_Number" style="margin: 10px; padding: 5px; width: 20%"><br>
+        <input name="Seat" type="text" placeholder="Seat" style="margin: 10px; padding: 5px; width: 20%"><br>
+        <input name="Meal" type="text" placeholder="Meal" style="margin: 10px; padding: 5px; width: 20%"><br>
+        <input name="Passport_Number" type="text" placeholder="Passport_Number" style="margin: 10px; padding: 5px; width: 20%"><br>
+        <input name="Passport_Expiry_Date" type="text" placeholder="Passport_Expiry_Date" style="margin: 10px; padding: 5px; width: 20%"><br>
+        {{!-- <input name="FFN" type="text" placeholder="Enter FFN" style="margin: 10px; padding: 5px; width: 20%"><br> --}}
+        <button type="submit" style="margin: 10px; padding: 5px;">Update</button>
+    </form>
+</body>
+</html>
